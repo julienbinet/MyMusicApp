@@ -1,0 +1,28 @@
+<ion-view view-title="{{album.nom}}">
+<ion-content class="padding">
+<ion-spinner icon="bubbles" ng-show="loading"></ion-spinner>
+
+<div ng-if="!loading">
+	
+	<div class="item item-image"><img src='{{urlWeb}}photo_album/{{album.pochette}}'></div>
+
+
+	<h2>{{album.nom}}</h2>
+
+	<p>{{album.date_sortie | dateFR}}</p>
+
+	<p  ng-bind-html="album.infos | nl2br" > </p>
+
+
+	<p ng-bind-html="album.chansons | nl2br" > </p>
+
+	<h3>Artiste</h3>
+	<a class="item item-thumbnail-left" href="#/tab/artists/{{album.artiste.id}}">
+		<img src='{{urlWeb}}photo_artiste/{{album.artiste.image}}'>
+		<h2>{{album.artiste.nom}}</h2>
+	</a>
+
+</div>
+
+</ion-content>
+</ion-view>

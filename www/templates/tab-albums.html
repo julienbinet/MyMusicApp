@@ -1,0 +1,22 @@
+<ion-view view-title="Liste des albums">
+
+<ion-content class="padding">
+<ion-spinner icon="bubbles" ng-show="loading"></ion-spinner>
+
+<div ng-if="!loading">
+
+    <h4>Total ({{albums.length}})</h4>
+
+    <div class="list">
+
+        <a class="item item-thumbnail-left" href="#/tab/albums/{{album.id}}" ng-repeat="album in albums" >
+          <img src='{{urlWeb}}photo_album/{{album.pochette}}'>
+          <h2>{{album.nom}}</h2>
+          <p>{{album.date_sortie | dateFR}}</p>
+      </a>
+
+  </div>
+</div>
+
+</ion-content>
+</ion-view>   

@@ -1,0 +1,22 @@
+<ion-view view-title="Liste des artistes">
+
+<ion-content class="padding">
+<ion-spinner icon="bubbles" ng-show="loading"></ion-spinner>
+
+<div ng-if="!loading">
+
+    <h4>Total ({{artists.length}})</h4>
+
+    <div class="list">
+
+        <a class="item item-thumbnail-left" href="#/tab/artists/{{artist.id}}" ng-repeat="artist in artists" >
+          <img src='{{urlWeb}}photo_artiste/{{artist.image}}'>
+          <h2>{{artist.nom}}</h2>
+          <p>{{artist.pays}}</p>
+      </a>
+
+  </div>
+</div>
+
+</ion-content>
+</ion-view>   

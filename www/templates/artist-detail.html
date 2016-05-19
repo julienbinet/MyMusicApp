@@ -1,0 +1,38 @@
+<ion-view view-title="{{artist.nom}}">
+<ion-content class="padding">
+<ion-spinner icon="bubbles" ng-show="loading"></ion-spinner>
+
+<div ng-if="!loading">
+	
+
+<div class="item item-image"><img src='{{urlWeb}}photo_artiste/{{artist.image}}'></div>
+
+
+<h2>{{artist.nom}}</h2>
+{{artist.pays}}
+
+<p ng-bind-html="artist.bio | nl2br" > </p>
+
+
+<h3>Genre</h3>
+<a class='item' ng-repeat="tag in artist.tags" href="#/tab/genres/{{tag.id}}/{{tag.nom}}">
+  {{tag.nom}}
+</a>
+
+<div ng-if="artist.albums.length">
+	
+<h3>Discographie</h3>
+<a class="item item-thumbnail-left" ng-repeat="album in artist.albums" href="#/tab/albums/{{album.id}}">
+  <img src='{{urlWeb}}photo_album/{{album.pochette}}'>
+  <h2>{{album.nom}}</h2>
+</a>
+
+</div>
+
+
+</div>
+
+
+
+</ion-content>
+</ion-view>

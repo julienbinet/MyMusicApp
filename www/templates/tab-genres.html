@@ -1,0 +1,20 @@
+<ion-view view-title="Liste des genres">
+
+<ion-content class="padding">
+<ion-spinner icon="bubbles" ng-show="loading"></ion-spinner>
+
+<div  ng-if="!loading">
+
+    <h4>Total ({{genres.length}})</h4>
+
+    <div class="list">
+
+        <a class="item" href="#/tab/genres/{{genre.id}}/{{genre.nom}}" ng-repeat="genre in genres" >
+          <h2>{{genre.nom}}</h2>
+      </a>
+
+  </div>
+</div>
+
+</ion-content>
+</ion-view>   

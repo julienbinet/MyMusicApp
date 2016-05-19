@@ -1,0 +1,30 @@
+<ion-view view-title="{{genre}}">
+
+<ion-content class="padding">
+
+
+<div ng-if="artists.length && !loading" >
+
+
+
+	<h4>Total ({{artists.length}})</h4>
+
+	<div class="list">
+
+		<a class="item item-thumbnail-left" href="#/tab/artists/{{artist.id}}" ng-repeat="artist in artists" >
+			<img src='{{urlWeb}}photo_artiste/{{artist.image}}'>
+			<h2>{{artist.nom}}</h2>
+			<p>{{artist.pays}}</p>
+		</a>
+
+	</div>
+</div>
+
+
+<div ng-if="!artists.length" >
+	<ion-spinner icon="bubbles" ng-show="loading"></ion-spinner>
+	Aucun artiste de ce style disponible.
+</div>
+
+</ion-content>
+</ion-view>   
